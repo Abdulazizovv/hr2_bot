@@ -1,0 +1,385 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 10:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: bot/handlers/users/about.py:9
+msgid ""
+"Buyurtma bo'yicha mijozlar hohishiga qarab turli xil mebel yasab beramiz\n"
+"Ijtimoiy tarmoqdagi sahifalarimiz:\n"
+"Instagram: 👉[Usta Abdulaziz](https://www.instagram.com/usta_abdulaziz?"
+"igshid=MWQ0MnFjY2ViOWhwNA%3D%3D&utm_source=qr)\n"
+msgstr ""
+
+#: bot/handlers/users/start.py:72
+msgid "Asosiy bo`limga xush keldingiz😊"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:25
+msgid "Bosh sahifadasiz"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:31
+msgid "Ariza bekor qilindi"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:38
+msgid ""
+"To'liq ism familyangizni kiriting:\n"
+"Masalan: Sobirov Olim"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:45
+msgid ""
+"Tug'ilgan kun, oy, yilingizni kiriting:\n"
+"Masalan: 01.01.1990"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:52
+msgid "Telefon raqamingizni yuboring"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:61
+msgid ""
+"Mebel sohasida ishlaganmisiz?\n"
+"Agar ishlagan bo'lsangiz, u haqida yozing. Aks holda 'Yo'q' deb yozing."
+msgstr ""
+
+#: bot/handlers/users/user_register.py:74
+msgid ""
+"Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."
+msgstr ""
+
+#: bot/handlers/users/user_register.py:78
+msgid "Iltimos, soha bo'yicha yo'nalishni tanlang:"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:87
+msgid "Anketa to'ldirishni boshlash✏️"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:98
+msgid "Qaysi viloyat yoki shahardansiz?"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:101
+msgid ""
+"Ariza qoldirish bekor qilindi.\n"
+"Siz bosh sahifaga qaytdingiz."
+msgstr ""
+
+#: bot/handlers/users/user_register.py:111
+msgid "Millatingizni tanlang:"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:120
+msgid "Ma'lumotingiz:"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:130
+msgid "Oilaviy holatingiz:"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:138
+msgid ""
+"Qaysi korxona yoki tashkilotlarda va qaysi lavozimlarda ishlagansiz?\n"
+"Masalan: OOO 'Uzavtosanoat' da, Direktor bo'lib ishlaganman\n"
+"<b><i>*Bu bo'limni to'ldirish majburiy</i></b>"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:147
+msgid ""
+"Bizda qancha maoshga ishlamoqchisiz?\n"
+"Masalan: 2 000 000 so'm"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:155
+msgid ""
+"Bizning korxonada qancha muddat ishlamoqchisiz?\n"
+"Masalan: 1 yil, 1 oy va h.k."
+msgstr ""
+
+#: bot/handlers/users/user_register.py:163
+msgid "Sudlanganmisiz?"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:171
+msgid "Haydovchilik guvohnomangiz bormi?"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:179
+msgid "O'zingizni shaxsiy avtomobilingiz bormi?"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:187
+msgid "Rus tili bilish darajangizni tanlang:"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:195
+msgid "Ingliz tili bilish darajangizni tanlang:"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:203
+msgid ""
+"Boshqa tillarni bilasizmi?\n"
+"Qaysi til va necha % "
+msgstr ""
+
+#: bot/handlers/users/user_register.py:210
+msgid ""
+"Word dasturini bilish darajasi:\n"
+"(foizda(%) ko'rsating)"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:217
+msgid ""
+"Word dasturini bilish darajasi:\n"
+"(foizda() ko'rsating)"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:225
+msgid ""
+"Excel dasturini bilish darajasi:\n"
+"(foizda() ko'rsating)"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:233
+msgid ""
+"1C dasturini bilish darajasi:\n"
+"(foizda() ko'rsating)"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:241
+msgid ""
+"Boshqa qanday dasturlar bilan ishlay olasiz?\n"
+"Nomi va necha %"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:248
+#: bot/handlers/users/user_register.py:255
+msgid "Korxonamiz haqida qayerdan ma'lumot oldingiz?"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:263
+msgid "Iltimos, rasmingizni yuboring:"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:271
+msgid ""
+"<b>Ma'lumotlaringizni to'gri ekanligini tekshiring va tasdiqlang</b>\n"
+"\n"
+msgstr ""
+
+#: bot/handlers/users/user_register.py:359
+msgid "Ariza yuborish bekor qilindi❌"
+msgstr ""
+
+#: bot/keyboards/default/main_menu_kb.py:9
+msgid "✍️ Ro'yxatdan o'tish"
+msgstr ""
+
+#: bot/keyboards/default/main_menu_kb.py:10
+msgid "📑 Korxona haqida to'liq ma'lumot"
+msgstr ""
+
+#: bot/keyboards/default/main_menu_kb.py:13
+msgid "🔙 Orqaga"
+msgstr ""
+
+#: bot/keyboards/default/send_phone_number_kb.py:9
+msgid "📞Telefon raqamni yuborish"
+msgstr ""
+
+#: bot/keyboards/inline/admin_menu_kb.py:8
+msgid "Arizalar🗂"
+msgstr ""
+
+#: bot/keyboards/inline/admin_menu_kb.py:11
+msgid "Vakansiyalar📋"
+msgstr ""
+
+#: bot/keyboards/inline/admin_menu_kb.py:14
+msgid "Adminlar👨🏻‍💻"
+msgstr ""
+
+#: bot/keyboards/inline/convince_kb.py:6 bot/keyboards/inline/has_car_kb.py:7
+msgid "Ha✅"
+msgstr ""
+
+#: bot/keyboards/inline/convince_kb.py:7
+#: bot/keyboards/inline/driver_licence_kb.py:10
+#: bot/keyboards/inline/has_car_kb.py:8
+msgid "Yo'q❌"
+msgstr ""
+
+#: bot/keyboards/inline/degree_kb.py:7
+msgid "0 %"
+msgstr ""
+
+#: bot/keyboards/inline/degree_kb.py:8
+msgid "25 %"
+msgstr ""
+
+#: bot/keyboards/inline/degree_kb.py:9
+msgid "50 %"
+msgstr ""
+
+#: bot/keyboards/inline/degree_kb.py:10
+msgid "75 %"
+msgstr ""
+
+#: bot/keyboards/inline/degree_kb.py:11
+msgid "100 %"
+msgstr ""
+
+#: bot/keyboards/inline/driver_licence_kb.py:7
+msgid "A"
+msgstr ""
+
+#: bot/keyboards/inline/driver_licence_kb.py:8
+msgid "B"
+msgstr ""
+
+#: bot/keyboards/inline/driver_licence_kb.py:9
+msgid "B, C"
+msgstr ""
+
+#: bot/keyboards/inline/driver_licence_kb.py:11
+msgid "Boshqa♻️"
+msgstr ""
+
+#: bot/keyboards/inline/married_kb.py:7
+msgid "Turmush qurgan"
+msgstr ""
+
+#: bot/keyboards/inline/married_kb.py:8
+msgid "Turmush qurmagan"
+msgstr ""
+
+#: bot/keyboards/inline/nationality_kb.py:5
+msgid "O'zbek"
+msgstr ""
+
+#: bot/keyboards/inline/nationality_kb.py:5
+msgid "Rus"
+msgstr ""
+
+#: bot/keyboards/inline/nationality_kb.py:5
+msgid "Tojik"
+msgstr ""
+
+#: bot/keyboards/inline/nationality_kb.py:5
+msgid "Qozoq"
+msgstr ""
+
+#: bot/keyboards/inline/nationality_kb.py:5
+msgid "Qirg'iz"
+msgstr ""
+
+#: bot/keyboards/inline/nationality_kb.py:5
+#: bot/keyboards/inline/where_hear_kb.py:16
+msgid "Boshqa"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Toshkent"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Andijon"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Buxoro"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Farg'ona"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Jizzax"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Namangan"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Navoiy"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Qashqadaryo"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Qoraqalpog'iston Respublikasi"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Samarqand"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Sirdaryo"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Surxondaryo"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Toshkent viloyati"
+msgstr ""
+
+#: bot/keyboards/inline/regions_kb.py:6
+msgid "Xorazm"
+msgstr ""
+
+#: bot/keyboards/inline/skip_kb.py:8
+msgid "Keyingi savol"
+msgstr ""
+
+#: bot/keyboards/inline/start_request_kb.py:8
+msgid "Anketa to'ldirish🚀"
+msgstr ""
+
+#: bot/keyboards/inline/start_request_kb.py:11
+#: bot/keyboards/inline/submit_application_kb.py:11
+msgid "Bekor qilish❌"
+msgstr ""
+
+#: bot/keyboards/inline/submit_application_kb.py:8
+msgid "Tasdiqlash✅"
+msgstr ""
+
+#: bot/keyboards/inline/where_hear_kb.py:8
+msgid "Telegram orqali"
+msgstr ""
+
+#: bot/keyboards/inline/where_hear_kb.py:9
+msgid "Instagram orqali"
+msgstr ""
+
+#: bot/keyboards/inline/where_hear_kb.py:12
+msgid "Facebook orqali"
+msgstr ""
+
+#: bot/keyboards/inline/where_hear_kb.py:13
+msgid "Tanishim"
+msgstr ""

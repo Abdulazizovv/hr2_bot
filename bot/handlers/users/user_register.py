@@ -72,7 +72,8 @@ async def get_is_worked(call: types.CallbackQuery, state: FSMContext):
     positions = await sync_to_async(lambda: list(Position.objects.all()), thread_sensitive=True)()
 
     if not positions:
-        await call.message.edit_text(_("Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."), reply_markup=main_menu_btn)
+        await call.message.delete()
+        await call.message.answer(_("Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."), reply_markup=main_menu_btn)
         await state.finish()
         return
 

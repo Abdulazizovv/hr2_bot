@@ -216,7 +216,7 @@ async def skip_other_language(call: types.CallbackQuery, state: FSMContext):
 @dp.message_handler(state=RegisterState.other_language)
 async def get_other_language(message: types.Message, state: FSMContext):
     await state.update_data(other_language=message.text)
-    await message.answer(_("Word dasturini bilish darajasi:\n(foizda() ko'rsating)"), reply_markup=degree_btn())
+    await message.answer(_("Word dasturini bilish darajasi:\n(foizda(%) ko'rsating)"), reply_markup=degree_btn())
     await RegisterState.third_answer.set()
 
 
@@ -224,7 +224,7 @@ async def get_other_language(message: types.Message, state: FSMContext):
 async def get_third_answer(call: types.CallbackQuery, state: FSMContext):
     third_answer = call.data.split(":")[-1]
     await state.update_data(third_answer=f"{third_answer} %")
-    await call.message.edit_text(_("Excel dasturini bilish darajasi:\n(foizda() ko'rsating)"), reply_markup=degree_btn())
+    await call.message.edit_text(_("Excel dasturini bilish darajasi:\n(foizda(%) ko'rsating)"), reply_markup=degree_btn())
     await RegisterState.fourth_answer.set()
 
 
@@ -232,7 +232,7 @@ async def get_third_answer(call: types.CallbackQuery, state: FSMContext):
 async def get_excel_level(call: types.CallbackQuery, state: FSMContext):
     excel_level = call.data.split(":")[-1]
     await state.update_data(fourth_answer=f"{excel_level} %")
-    await call.message.edit_text(_("1C dasturini bilish darajasi:\n(foizda() ko'rsating)"), reply_markup=degree_btn())
+    await call.message.edit_text(_("1C dasturini bilish darajasi:\n(foizda(%) ko'rsating)"), reply_markup=degree_btn())
     await RegisterState.c1_program_level.set()
 
 
@@ -262,7 +262,7 @@ async def get_fifth_answer(message: types.Message, state: FSMContext):
 async def get_sixth_answer(call: types.CallbackQuery, state: FSMContext):
     sixth_answer = call.data
     await state.update_data(sixth_answer=sixth_answer)
-    await call.message.edit_text(_("Iltimos, rasmingizni yuboring:"))
+    await call.message.edit_text(_("Iltimos, rasmingizni yuboring📷:"))
     await RegisterState.image.set()
 
 

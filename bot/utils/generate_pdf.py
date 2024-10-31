@@ -104,8 +104,8 @@ async def create_pdf_with_tables(filename, data, image_stream=None):
     buffer.seek(0)
     
     # Save the PDF to file
-    with open(filename, 'wb') as pdf_file:
-        pdf_file.write(buffer.getvalue())
+    # with open("ankets/" + filename, 'wb') as pdf_file:
+    #     pdf_file.write(buffer.getvalue())
     
     buffer.seek(0)  # Reset the buffer for further use
     return buffer  # Return buffer for uploading

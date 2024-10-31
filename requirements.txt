@@ -3,3 +3,4 @@ Django==5.0.1
 environs==10.3.0
 pillow==10.2.0
 reportlab
+psycopg2-binary

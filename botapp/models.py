@@ -62,7 +62,7 @@ class UserRequest(models.Model):
     fourth_answer = models.CharField(max_length=25) # excel dasturida ishlay olish darajasi
     c1_program_level = models.CharField(max_length=25) # C1 dasturida ishlay olish darajasi
     
-    worked_furniture = models.TextField(null=True, blank=True) # mebel korxonalari bilan ishlaganligi
+    worked_furniture = models.BooleanField(default=False) # mebel korxonalari bilan ishlaganligi
     fifth_answer = models.TextField() # boshqa dasturlarda ishlay olish darajasi
     sixth_answer = models.TextField(null=True, blank=True) # qayerdan ma'lumot olishganligi
     image = models.CharField(max_length=255) # foydalanuvchi rasmi(telegram file id)

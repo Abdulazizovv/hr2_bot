@@ -87,7 +87,7 @@ async def create_pdf_with_tables(filename, data, image_stream=None):
 
     # Skills and Language Information with adjusted column widths and wrapped text
     skills_data = [
-        ["Xaydovchilik guvoxnomangiz bormi", data.get('driver_license')],
+        ["Xaydovchilik guvohnomangiz bormi", data.get('driver_license')],
         ["O'zingizning shaxsiy avtomobilingiz bormi", data.get('has_car')],
         ["Ingliz tilini bilish darajangiz", data.get('english_level')],
         ["Rus tilini bilish darajangiz", data.get('russian_level')],
@@ -114,7 +114,7 @@ async def create_pdf_with_tables(filename, data, image_stream=None):
 
 async def upload_to_channel(pdf_buffer, image_file_id, caption_text):
     # Upload PDF
-    pdf_message = await dp.bot.send_document(chat_id=CHANNEL_ID, document=("data.pdf", pdf_buffer), caption=caption_text)
+    pdf_message = await dp.bot.send_document(chat_id=CHANNEL_ID, document=("anketa.pdf", pdf_buffer), caption=caption_text)
     pdf_file_id = pdf_message.document.file_id
 
     # Upload Image if available

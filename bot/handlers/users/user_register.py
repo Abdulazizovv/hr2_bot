@@ -14,7 +14,7 @@ from botapp.models import Position
 from bot.keyboards.inline import education_levels_btn, education_levels
 from bot.keyboards.inline import driver_licence_btn
 from bot.keyboards.inline import has_car_btn
-from bot.keyboards.inline import degree_btn, skip_btn, where_hear_btn
+from bot.keyboards.inline import degree_btn, skip_btn, where_hear_btn, is_worked_kb
 import asyncio
 
 
@@ -58,25 +58,27 @@ async def get_phone_number(message: types.Message, state: FSMContext):
     phone_number = message.contact.phone_number
     await state.update_data(phone_number=phone_number)
 
-    await message.answer(_("Mebel sohasida ishlaganmisiz?\nAgar ishlagan bo'lsangiz, u haqida yozing. Aks holda 'Yo'q' deb yozing."), reply_markup=cancel_btn)
+    await message.answer(_("Mebel sohasida ishlaganmisiz?"), reply_markup=is_worked_kb())
     await RegisterState.worked_furniture.set()
 
-    
 
-
-@dp.message_handler(state=RegisterState.worked_furniture)
-async def get_worked_in_furniture(message: types.Message, state: FSMContext):
-    await state.update_data(worked_furniture=message.text)
-    # Fetch positions asynchronously
+@dp.callback_query_handler(state=RegisterState.worked_furniture)
+async def get_is_worked(call: types.CallbackQuery, state: FSMContext):
+    is_worked = call.data
+    if is_worked == "is_worked_yes":
+        await state.update_data(worked_furniture="Ha")
+    else:
+        await state.update_data(worked_furniture="Yo'q")
     positions = await sync_to_async(lambda: list(Position.objects.all()), thread_sensitive=True)()
 
     if not positions:
-        await message.answer(_("Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."), reply_markup=main_menu_btn)
+        await call.message.edit_text(_("Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."), reply_markup=main_menu_btn)
         await state.finish()
         return
 
-    await message.answer(_("Iltimos, soha bo'yicha yo'nalishni tanlang:"), reply_markup=positions_btn(positions))
+    await call.message.edit_text(_("Iltimos, soha bo'yicha yo'nalishni tanlang:"), reply_markup=positions_btn(positions))
     await RegisterState.position.set()
+
 
 
 @dp.callback_query_handler(state=RegisterState.position)
@@ -105,7 +107,6 @@ async def start_request(call: types.CallbackQuery, state: FSMContext):
 @dp.callback_query_handler(state=RegisterState.region)
 async def get_region(call: types.CallbackQuery, state: FSMContext):
     region_index = call.data.split(":")[-1]
-    print(region_index)
     region = regions[int(region_index)]
     await state.update_data(region=region)
     await call.message.edit_text(_("Millatingizni tanlang:"), reply_markup=nationalities_btn())
@@ -272,6 +273,7 @@ async def get_image(message: types.Message, state: FSMContext):
                            f"<b>Ism va familya:</b> {data.get('full_name')}\n"
                            f"<b>Tug'ilgan yil:</b> {data.get('birth_year')}\n"
                            f"<b>Telefon raqam:</b> {data.get('phone_number')}\n"
+                           f"<b>Mebel sohasida ishlaganligi:</b> {data.get('worked_furniture')}\n"
                            f"<b>Lavozim:</b> {data.get('position')}\n"
                            f"<b>Hudud:</b> {data.get('region')}\n"
                            f"<b>Millat:</b> {data.get('nationality')}\n"
@@ -319,13 +321,14 @@ async def submit_application(call: types.CallbackQuery, state: FSMContext):
                         f"\n📞Telefon raqam: {data.get('phone_number')}" \
                         f"\n#️⃣Soha: {data.get('position')}" \
                         f"\n📍Hudud: {data.get('region')}"
+        await call.message.edit_reply_markup()
         await call.message.answer("⏳")
         pdf_file_id, image_file_id = await upload_to_channel(pdf, data.get("image"), caption_text)
-
-        await sync_to_async(add_user_request)(
+        request = await sync_to_async(add_user_request)(
             user_id=call.from_user.id,
             full_name=data.get("full_name"),
             phone_number=data.get("phone_number"),
+            is_worked=True if data.get("worked_furniture")=="Ha" else False,
             birth_year=data.get("birth_year"),
             position=data.get("position"),
             region=data.get("region"),
@@ -346,14 +349,13 @@ async def submit_application(call: types.CallbackQuery, state: FSMContext):
             c1_program_level=data.get("c1_program_level"),
             fifth_answer=data.get("fifth_answer"),
             sixth_answer=data.get("sixth_answer"),
-            worked_furniture=data.get("worked_furniture"),
             image=image_file_id,
             file_id=pdf_file_id
         )
-        await call.message.edit_reply_markup()
         
         await call.message.answer_document(document=pdf_file_id, caption=caption_text)
         await call.message.answer("Arizaningiz muvaffaqiyatli yuborildi✅")
+        await on_new_request_notify(dp=dp, request_id=await sync_to_async(lambda: request.id)())
     else:
         await call.message.edit_reply_markup()
         await call.message.edit_text(_("Ariza yuborish bekor qilindi❌"))

@@ -108,8 +108,8 @@ async def show_request_detail(call: types.CallbackQuery):
             f"19. Excel dasturini bilish darajsi: {request_detail.fourth_answer}\n"
             f"20. 1C dasturini bilish darajsi: {request_detail.c1_program_level}\n"
             f"21. Boshqa dasturlar: {request_detail.fifth_answer}\n"
-            f"22. Mebel sohasida ishlaganmi:{request_detail.worked_furniture}\n"
             f"23. Biz haqimizda qayerdan ma'lumot oldi: {request_detail.sixth_answer if request_detail.sixth_answer else 'N/A'}\n"
+            f"22. Mebel sohasida ishlaganmi:{'Ha' if request_detail.worked_furniture else 'Yo`q'}\n"
             f"24. Ariza yuborilgan sana: {request_detail.created_at.strftime('%Y-%m-%d %H:%M:%S')}")
 
         try:

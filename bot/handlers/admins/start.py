@@ -68,7 +68,7 @@ async def show_requests(call: types.CallbackQuery):
             await call.message.delete()
             await call.message.answer(requests_message, reply_markup=keyboard)
         else:
-            await call.message.edit_text("No requests found.")
+            await call.message.edit_text("Arizalar topilmadi.")
     
     except Exception as e:
         logger.exception(f"Error in show_requests: {e}")

@@ -356,7 +356,7 @@ async def submit_application(call: types.CallbackQuery, state: FSMContext):
         
         await call.message.answer_document(document=pdf_file_id, caption=caption_text)
         await call.message.answer("Arizaningiz muvaffaqiyatli yuborildi✅")
-        await on_new_request_notify(dp=dp, request_id=await sync_to_async(lambda: request.id)())
+        await on_new_request_notify(dp, await sync_to_async(lambda: request.id)())
     else:
         await call.message.edit_reply_markup()
         await call.message.edit_text(_("Ariza yuborish bekor qilindi❌"))

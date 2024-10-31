@@ -43,7 +43,7 @@ class UserRequest(models.Model):
     user = models.ForeignKey(BotUser, on_delete=models.CASCADE) # user
     full_name = models.CharField(max_length=255) # ismi va familiyasi
     phone_number = models.CharField(max_length=255) #
-    birth_year = models.CharField(max_length=6) # tug'ilgan yili
+    birth_year = models.CharField(max_length=255) # tug'ilgan yili
     position = models.CharField(max_length=255) # lavozim
     region = models.CharField(max_length=255) # viloyat
     nationality = models.CharField(max_length=255) # millati

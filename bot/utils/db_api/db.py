@@ -8,7 +8,7 @@ def add_user(user_id, username, full_name):
 
 def get_user(user_id):
     try:
-        user = BotUser.objects.get(user_id=user_id)
+        user = BotUser.objects.get(user_id=int(user_id))
         return user
     except BotUser.DoesNotExist:
         return None

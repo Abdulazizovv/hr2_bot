@@ -7,6 +7,8 @@ from asgiref.sync import sync_to_async
 from botapp.models import UserRequest, BotUser, BotAdmin, Position
 from datetime import datetime
 from bot.keyboards.inline.admin_menu_kb import admin_menu_btn
+from bot.utils.db_api import add_user
+
 
 logger = logging.getLogger(__name__)
 
@@ -15,19 +17,20 @@ REQUESTS_PER_PAGE = 5
 @dp.message_handler(IsAdmin(), commands=['start'])
 async def admin_start(message: types.Message):
     try:
+        await sync_to_async(add_user)(user_id=message.from_user.id, username=message.from_user.username, full_name=message.from_user.full_name)
         todays_requests = await sync_to_async(list)(UserRequest.objects.filter(created_at__date=datetime.now().date()))
         all_requests = await sync_to_async(list)(UserRequest.objects.all())
         all_users = await sync_to_async(list)(BotUser.objects.all())
         admins = await sync_to_async(list)(BotAdmin.objects.all())
         positions = await sync_to_async(list)(Position.objects.all())
         await message.answer(f"Assalomu alaykum, admin🫡\n"
-                             f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\n"
+                             f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\n"
                              f"Bugungi so'rovlar soni: {len(todays_requests)}\n"
                              f"Jami so'rovlar soni: {len(all_requests)}\n"
                              f"Jami foydalanuvchilar soni: {len(all_users)}\n"
                              f"Jami adminlar soni: {len(ADMINS)}\n"
                              f"Ochiq vakansiyalar soni: {len(positions)}\n"
-                             f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\n", reply_markup=admin_menu_btn)
+                             f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\n", reply_markup=admin_menu_btn)
     except Exception as e:
         logger.exception(f"Error in admin_start: {e}")
         await message.answer("Xatolik yuz berdi. Iltimos, keyinroq qaytadan urinib ko'ring.")

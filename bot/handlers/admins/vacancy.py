@@ -62,6 +62,10 @@ async def handle_position_pagination(call: types.CallbackQuery):
 
 @dp.callback_query_handler(IsAdmin(), text="add_position")
 async def add_position(call: types.CallbackQuery):
+    try:
+        await call.message.delete()
+    except Exception as e:
+        logger.exception(f"Error in add_position: {e}")
     await call.message.answer("Yangi vakansiya nomini kiriting:")
     await call.message.edit_reply_markup()
     await AdminState.new_position_name.set()

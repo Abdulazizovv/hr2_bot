@@ -67,7 +67,6 @@ async def add_position(call: types.CallbackQuery):
     except Exception as e:
         logger.exception(f"Error in add_position: {e}")
     await call.message.answer("Yangi vakansiya nomini kiriting:")
-    await call.message.edit_reply_markup()
     await AdminState.new_position_name.set()
 
 

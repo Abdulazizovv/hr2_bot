@@ -68,7 +68,11 @@ async def show_requests(call: types.CallbackQuery):
             await call.message.delete()
             await call.message.answer(requests_message, reply_markup=keyboard)
         else:
-            await call.message.edit_text("Arizalar topilmadi.", reply_markup=types.InlineKeyboardButton("Orqaga🔙", callback_data="start"))
+            await call.message.edit_text("Arizalar topilmadi.", reply_markup=types.InlineKeyboardMarkup(
+                inline_keyboard=[
+                    [types.InlineKeyboardButton("Orqaga🔙", callback_data="start")]
+                ]
+            ))
     
     except Exception as e:
         logger.exception(f"Error in show_requests: {e}")

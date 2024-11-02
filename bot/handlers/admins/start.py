@@ -105,7 +105,7 @@ async def show_request_detail(call: types.CallbackQuery):
             f"10. Ishlash muddati: {request_detail.second_answer if request_detail.second_answer else 'N/A'}\n"
             f"11. Sudlanganmi: {'Ha' if request_detail.convince else 'Yo`q'}\n"
             f"12. Haydovchilik guvohnomasi: {request_detail.driver_license}\n"
-            f"13. Mashinasi bormi: {'Yes' if request_detail.has_car else 'No'}\n"
+            f"13. Mashinasi bormi: {'Ha' if request_detail.has_car else 'Yo`q'}\n"
             f"14. Ingliz tili darajasi: {request_detail.english_level}\n"
             f"15. Rus tili darajasi: {request_detail.russian_level}\n"
             f"16 Boshqa tillar: {request_detail.other_language}\n"

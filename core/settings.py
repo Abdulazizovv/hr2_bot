@@ -129,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 TIME_ZONE = 'Asia/Samarkand'
-
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

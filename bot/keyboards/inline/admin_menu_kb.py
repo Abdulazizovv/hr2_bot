@@ -7,9 +7,9 @@ admin_menu_btn = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(text=_("Arizalar🗂"), callback_data="requests:0")
         ],
-        [
-            InlineKeyboardButton(text=_("Vakansiyalar📋"), callback_data="positions")
-        ],
+        # [
+        #     InlineKeyboardButton(text=_("Vakansiyalar📋"), callback_data="positions")
+        # ],
         [
             InlineKeyboardButton(text=_("Adminlar👨🏻‍💻"), callback_data="admins")
         ],

@@ -1,5 +1,7 @@
 from botapp.models import BotUser, UserRequest, Position, BotAdmin
 import logging
+from django.utils import timezone
+
 
 def add_user(user_id, username, full_name):
     user, created = BotUser.objects.get_or_create(user_id=user_id, username=username, full_name=full_name)
@@ -46,7 +48,7 @@ def get_all_positions():
     return positions
 
 
-def add_user_request(user_id, full_name, phone_number, is_worked, birth_year, position, region, nationality, education, marriage, first_answer, salary, second_answer, convince, driver_license, has_car, english_level, russian_level, other_language, third_answer, fourth_answer, c1_program_level, fifth_answer, sixth_answer, image, file_id):
+def add_user_request(user_id, full_name, phone_number, is_worked, birth_year, region, nationality, education, marriage, first_answer, salary, second_answer, convince, driver_license, has_car, english_level, russian_level, other_language, third_answer, fourth_answer, fifth_answer, sixth_answer, image, file_id):
     user = get_user(user_id)
     if user:
         try:
@@ -56,7 +58,6 @@ def add_user_request(user_id, full_name, phone_number, is_worked, birth_year, po
             phone_number=phone_number,
             worked_furniture=is_worked,
             birth_year=birth_year,
-            position=position,
             region=region,
             nationality=nationality,
             education=education,
@@ -72,7 +73,6 @@ def add_user_request(user_id, full_name, phone_number, is_worked, birth_year, po
             other_language=other_language,
             third_answer=third_answer,
             fourth_answer=fourth_answer,
-            c1_program_level=c1_program_level,
             fifth_answer=fifth_answer,
             sixth_answer=sixth_answer,
             image=image,
@@ -94,7 +94,6 @@ def get_user_request(request_id):
             "phone_number": user_request.phone_number,
             "worked_furniture": user_request.worked_furniture,
             "birth_year": user_request.birth_year,
-            "position": user_request.position,
             "region": user_request.region,
             "nationality":user_request.nationality,
             "education": user_request.education,
@@ -110,7 +109,6 @@ def get_user_request(request_id):
             "other_language": user_request.other_language,
             "third_answer": user_request.third_answer,
             "fourth_answer": user_request.fourth_answer,
-            "c1_program_level": user_request.c1_program_level,
             "fifth_answer": user_request.fifth_answer,
             "sixth_answer": user_request.sixth_answer,
             "image": user_request.image,
@@ -150,10 +148,12 @@ def get_bot_admins_id():
     return list(users.values_list('user_id', flat=True))
 
 
+
 def fetch_todays_requests():
-    from datetime import datetime
-    requests = UserRequest.objects.filter(created_at__date=datetime.now().date())
+    today = timezone.now().date()
+    requests = UserRequest.objects.filter(created_at__date=today)
     return requests
+
 
 
 def fetch_all_users():

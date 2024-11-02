@@ -65,7 +65,6 @@ async def create_pdf_with_tables(filename, data, image_stream=None):
         ["Ism, Familyasi", data.get('full_name')],
         ["Tug'ilgan yili", data.get('birth_year')],
         ["Telefon raqami", data.get('phone_number')],
-        ["Soha bo'yicha yo'nalishi", data.get('position')],
         ["Viloyati", data.get('region')],
         ["Millati", data.get('nationality')],
         ["Ma'lumoti", data.get('education')],
@@ -76,7 +75,7 @@ async def create_pdf_with_tables(filename, data, image_stream=None):
 
     # Work Experience with adjusted column widths and wrapped text
     work_experience_data = [
-        ["Mebel sohasida ishlagansizmi", data.get('worked_furniture')],
+        ["Mebel sohasida ishlagansizmi", 'Ha' if data.get('worked_furniture') else "Yo'q"],
         ["Qaysi korxona yoki lavozimlarda ishlagansiz", data.get('first_answer')],
         ["Bizda qancha maoshga ishlamoqchisiz", data.get('salary')],
         ["Bizning korxonada qancha muddat ishlamoqchisiz", data.get('second_answer')],
@@ -94,7 +93,6 @@ async def create_pdf_with_tables(filename, data, image_stream=None):
         ["Boshqa tillar", data.get('other_language')],
         ["Word dasturini bilish darajangiz", data.get('third_answer')],
         ["Excel dasturini bilish darajangiz", data.get('fourth_answer')],
-        ["1C dasturini bilish darajangiz", data.get('c1_program_level')],
         ["Boshqa dasturlarni bilish darajangiz", data.get('fifth_answer')],
     ]
     elements.append(create_table(skills_data, [250, 300]))

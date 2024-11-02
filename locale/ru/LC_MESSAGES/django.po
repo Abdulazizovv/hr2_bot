@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-30 10:49+0000\n"
+"POT-Creation-Date: 2024-11-02 19:32+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,30 +65,18 @@ msgid "Telefon raqamingizni yuboring"
 msgstr "Телефон рақамингизни юборинг"
 
 #: bot/handlers/users/user_register.py:61
-msgid ""
-"Mebel sohasida ishlaganmisiz?\n"
-"Agar ishlagan bo'lsangiz, u haqida yozing. Aks holda 'Yo'q' deb yozing."
-msgstr ""
+msgid "Mebel sohasida ishlaganmisiz?"
+msgstr "Мебел соҳасида ишлаганмисиз?"
 
-#: bot/handlers/users/user_register.py:74
-msgid ""
-"Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."
-msgstr ""
-"Ҳозирча ҳеч қандай йўналиш мавжуд эмас. Илтимос, кейинроқ уриниб кўринг."
-
-#: bot/handlers/users/user_register.py:78
-msgid "Iltimos, soha bo'yicha yo'nalishni tanlang:"
-msgstr "Илтимос, соҳа бўйича йўналишни танланг:"
-
-#: bot/handlers/users/user_register.py:87
+#: bot/handlers/users/user_register.py:73
 msgid "Anketa to'ldirishni boshlash✏️"
 msgstr "Анкета тўлдиришни бошлаш✏️"
 
-#: bot/handlers/users/user_register.py:98
+#: bot/handlers/users/user_register.py:106
 msgid "Qaysi viloyat yoki shahardansiz?"
 msgstr "Қайси вилоят ёки шаҳардансиз?"
 
-#: bot/handlers/users/user_register.py:101
+#: bot/handlers/users/user_register.py:109
 msgid ""
 "Ariza qoldirish bekor qilindi.\n"
 "Siz bosh sahifaga qaytdingiz."
@@ -96,19 +84,19 @@ msgstr ""
 "Ариза қолдириш бекор қилинди.\n"
 "Сиз бош саҳифага қайтдингиз."
 
-#: bot/handlers/users/user_register.py:111
+#: bot/handlers/users/user_register.py:118
 msgid "Millatingizni tanlang:"
 msgstr "Миллатингизни танланг:"
 
-#: bot/handlers/users/user_register.py:120
+#: bot/handlers/users/user_register.py:127
 msgid "Ma'lumotingiz:"
 msgstr "Маълумотингиз:"
 
-#: bot/handlers/users/user_register.py:130
+#: bot/handlers/users/user_register.py:137
 msgid "Oilaviy holatingiz:"
 msgstr "Оилавий ҳолатингиз:"
 
-#: bot/handlers/users/user_register.py:138
+#: bot/handlers/users/user_register.py:145
 msgid ""
 "Qaysi korxona yoki tashkilotlarda va qaysi lavozimlarda ishlagansiz?\n"
 "Masalan: OOO 'Uzavtosanoat' da, Direktor bo'lib ishlaganman\n"
@@ -118,9 +106,7 @@ msgstr ""
 "Масалан: ООО ъУзавтосаноатъ да, Директор бўлиб ишлаганман\n"
 "<b><i>*Бу бўлимни тўлдириш мажбурий</i></b>"
 
-#: bot/handlers/users/user_register.py:147
-#, fuzzy
-#| msgid "Bizda qancha maoshga ishlamoqchisiz?"
+#: bot/handlers/users/user_register.py:154
 msgid ""
 "Bizda qancha maoshga ishlamoqchisiz?\n"
 "Masalan: 2 000 000 so'm"
@@ -128,35 +114,34 @@ msgstr ""
 "Бизда қанча маошга ишламоқчисиз?\n"
 "Масалан: 2 000 000 сўм"
 
-#: bot/handlers/users/user_register.py:155
-#, fuzzy
-#| msgid "Bizning korxonada qancha muddat ishlamoqchisiz?"
+#: bot/handlers/users/user_register.py:162
 msgid ""
 "Bizning korxonada qancha muddat ishlamoqchisiz?\n"
 "Masalan: 1 yil, 1 oy va h.k."
-msgstr "Бизнинг корхонада қанча муддат ишламоқчисиз?"
+msgstr "Бизнинг корхонада қанча муддат ишламоқчисиз?\n"
+"Масалан: 1 йил, 1 ой ва ҳ.к."
 
-#: bot/handlers/users/user_register.py:163
+#: bot/handlers/users/user_register.py:170
 msgid "Sudlanganmisiz?"
 msgstr "Судланганмисиз?"
 
-#: bot/handlers/users/user_register.py:171
+#: bot/handlers/users/user_register.py:178
 msgid "Haydovchilik guvohnomangiz bormi?"
 msgstr "Ҳайдовчилик гувоҳномангиз борми?"
 
-#: bot/handlers/users/user_register.py:179
+#: bot/handlers/users/user_register.py:186
 msgid "O'zingizni shaxsiy avtomobilingiz bormi?"
 msgstr "Ўзингизни шахсий автомобилингиз борми?"
 
-#: bot/handlers/users/user_register.py:187
+#: bot/handlers/users/user_register.py:194
 msgid "Rus tili bilish darajangizni tanlang:"
 msgstr "Рус тили билиш даражангизни танланг:"
 
-#: bot/handlers/users/user_register.py:195
+#: bot/handlers/users/user_register.py:202
 msgid "Ingliz tili bilish darajangizni tanlang:"
 msgstr "Инглиз тили билиш даражангизни танланг:"
 
-#: bot/handlers/users/user_register.py:203
+#: bot/handlers/users/user_register.py:210
 msgid ""
 "Boshqa tillarni bilasizmi?\n"
 "Qaysi til va necha % "
@@ -164,7 +149,8 @@ msgstr ""
 "Бошқа тилларни биласизми?\n"
 "Қайси тил ва неча % "
 
-#: bot/handlers/users/user_register.py:210
+#: bot/handlers/users/user_register.py:217
+#: bot/handlers/users/user_register.py:224
 msgid ""
 "Word dasturini bilish darajasi:\n"
 "(foizda(%) ko'rsating)"
@@ -172,31 +158,19 @@ msgstr ""
 "Wорд дастурини билиш даражаси:\n"
 "(фоизда(%) кўрсатинг)"
 
-#: bot/handlers/users/user_register.py:217
-msgid ""
-"Word dasturini bilish darajasi:\n"
-"(foizda() ko'rsating)"
-msgstr ""
-"Wорд дастурини билиш даражаси:\n"
-"(фоизда() кўрсатинг)"
-
-#: bot/handlers/users/user_register.py:225
+#: bot/handlers/users/user_register.py:232
+#, fuzzy
+#| msgid ""
+#| "Excel dasturini bilish darajasi:\n"
+#| "(foizda() ko'rsating)"
 msgid ""
 "Excel dasturini bilish darajasi:\n"
-"(foizda() ko'rsating)"
+"(foizda(%) ko'rsating)"
 msgstr ""
 "Эхcел дастурини билиш даражаси:\n"
 "(фоизда() кўрсатинг)"
 
-#: bot/handlers/users/user_register.py:233
-msgid ""
-"1C dasturini bilish darajasi:\n"
-"(foizda() ko'rsating)"
-msgstr ""
-"1C дастурини билиш даражаси:\n"
-"(фоизда() кўрсатинг)"
-
-#: bot/handlers/users/user_register.py:241
+#: bot/handlers/users/user_register.py:240
 msgid ""
 "Boshqa qanday dasturlar bilan ishlay olasiz?\n"
 "Nomi va necha %"
@@ -204,16 +178,16 @@ msgstr ""
 "Бошқа қандай дастурлар билан ишлай оласиз?\n"
 "Номи ва неча %"
 
-#: bot/handlers/users/user_register.py:248
-#: bot/handlers/users/user_register.py:255
+#: bot/handlers/users/user_register.py:258
+#: bot/handlers/users/user_register.py:265
 msgid "Korxonamiz haqida qayerdan ma'lumot oldingiz?"
 msgstr "Корхонамиз ҳақида қаердан маълумот олдингиз?"
 
-#: bot/handlers/users/user_register.py:263
-msgid "Iltimos, rasmingizni yuboring:"
+#: bot/handlers/users/user_register.py:273
+msgid "Iltimos, rasmingizni yuboring📷:"
 msgstr "Илтимос, расмингизни юборинг:"
 
-#: bot/handlers/users/user_register.py:271
+#: bot/handlers/users/user_register.py:281
 msgid ""
 "<b>Ma'lumotlaringizni to'gri ekanligini tekshiring va tasdiqlang</b>\n"
 "\n"
@@ -221,7 +195,7 @@ msgstr ""
 "<b>Маълумотларингизни тўгри эканлигини текширинг ва тасдиқланг</b>\n"
 "\n"
 
-#: bot/handlers/users/user_register.py:359
+#: bot/handlers/users/user_register.py:368
 msgid "Ariza yuborish bekor qilindi❌"
 msgstr "Ариза юбориш бекор қилинди❌"
 
@@ -264,23 +238,23 @@ msgid "Yo'q❌"
 msgstr "Йўқ❌"
 
 #: bot/keyboards/inline/degree_kb.py:7
-msgid "0 %"
+msgid "•0 %"
 msgstr ""
 
 #: bot/keyboards/inline/degree_kb.py:8
-msgid "25 %"
+msgid "•25 %"
 msgstr ""
 
 #: bot/keyboards/inline/degree_kb.py:9
-msgid "50 %"
+msgid "•50 %"
 msgstr ""
 
 #: bot/keyboards/inline/degree_kb.py:10
-msgid "75 %"
+msgid "•75 %"
 msgstr ""
 
 #: bot/keyboards/inline/degree_kb.py:11
-msgid "100 %"
+msgid "•100 %"
 msgstr ""
 
 #: bot/keyboards/inline/driver_licence_kb.py:7
@@ -296,10 +270,8 @@ msgid "B, C"
 msgstr ""
 
 #: bot/keyboards/inline/driver_licence_kb.py:11
-#, fuzzy
-#| msgid "Boshqa"
 msgid "Boshqa♻️"
-msgstr "Бошқа"
+msgstr "Бошқа♻️"
 
 #: bot/keyboards/inline/married_kb.py:7
 msgid "Turmush qurgan"
@@ -422,6 +394,29 @@ msgstr "Фаcебоок орқали"
 #: bot/keyboards/inline/where_hear_kb.py:13
 msgid "Tanishim"
 msgstr "Танишим"
+
+#~ msgid ""
+#~ "Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib "
+#~ "ko'ring."
+#~ msgstr ""
+#~ "Ҳозирча ҳеч қандай йўналиш мавжуд эмас. Илтимос, кейинроқ уриниб кўринг."
+
+#~ msgid "Iltimos, soha bo'yicha yo'nalishni tanlang:"
+#~ msgstr "Илтимос, соҳа бўйича йўналишни танланг:"
+
+#~ msgid ""
+#~ "Word dasturini bilish darajasi:\n"
+#~ "(foizda() ko'rsating)"
+#~ msgstr ""
+#~ "Wорд дастурини билиш даражаси:\n"
+#~ "(фоизда() кўрсатинг)"
+
+#~ msgid ""
+#~ "1C dasturini bilish darajasi:\n"
+#~ "(foizda() ko'rsating)"
+#~ msgstr ""
+#~ "1C дастурини билиш даражаси:\n"
+#~ "(фоизда() кўрсатинг)"
 
 #~ msgid "Qaysi korxona yoki tashkilotlarda va qaysi lavozimlarda ishlagansiz?"
 #~ msgstr "Қайси корхона ёки ташкилотларда ва қайси лавозимларда ишлагансиз?"

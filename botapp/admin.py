@@ -26,8 +26,8 @@ class PositionAdmin(admin.ModelAdmin):
 
 
 class UserRequestAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'full_name', 'phone_number', 'birth_year', 'position', 'region', 'nationality', 'education', 'marriage', 'first_answer', 'salary', 'second_answer', 'convince', 'driver_license', 'has_car', 'english_level', 'russian_level', 'other_language', 'created_at', 'updated_at')
-    search_fields = ('id', 'user__full_name', 'full_name', 'phone_number', 'birth_year', 'position', 'nationality', 'education', 'region')
+    list_display = ('id', 'user', 'full_name', 'phone_number', 'birth_year', 'region', 'nationality', 'education', 'marriage', 'first_answer', 'salary', 'second_answer', 'convince', 'driver_license', 'has_car', 'english_level', 'russian_level', 'other_language', 'created_at', 'updated_at')
+    search_fields = ('id', 'user__full_name', 'full_name', 'phone_number', 'birth_year', 'nationality', 'education', 'region')
     list_filter = ('created_at', 'updated_at')
     readonly_fields = ('created_at', 'updated_at')
 

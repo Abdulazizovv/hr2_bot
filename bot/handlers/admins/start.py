@@ -29,7 +29,6 @@ async def admin_start(message: types.Message):
                              f"Jami so'rovlar soni: {len(all_requests)}\n"
                              f"Jami foydalanuvchilar soni: {len(all_users)}\n"
                              f"Jami adminlar soni: {len(ADMINS)}\n"
-                             f"Ochiq vakansiyalar soni: {len(positions)}\n"
                              f"➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\n", reply_markup=admin_menu_btn)
     except Exception as e:
         logger.exception(f"Error in admin_start: {e}")
@@ -54,7 +53,7 @@ async def show_requests(call: types.CallbackQuery):
         if requests_to_display:
             requests_message = "Barcha arizalar:\n\n"
             for idx, request in enumerate(requests_to_display, start=start_index + 1):
-                requests_message += f"{idx}. {request.full_name} - {request.position}\n"
+                requests_message += f"{idx}. {request.full_name}\n"
                 keyboard.insert(types.InlineKeyboardButton(f"{idx}", callback_data=f"request_detail:{request.id}"))
             
             # Create pagination buttons
@@ -97,27 +96,25 @@ async def show_request_detail(call: types.CallbackQuery):
             f"1. Ism familyasi: {request_detail.full_name}\n"
             f"2. Telefon raqam: {request_detail.phone_number}\n"
             f"3. Tug'ilgan kun: {request_detail.birth_year}\n"
-            f"4. Yo'nalish: {request_detail.position}\n"
-            f"5. Hudud: {request_detail.region}\n"
-            f"6. Millati: {request_detail.nationality}\n"
-            f"7. Ma'lumoti: {request_detail.education}\n"
-            f"8. Oilaviy holati: {'Turmush qurgan' if request_detail.marriage else 'Turmush qurmagan'}\n"
-            f"9. Avval ishlagan korxonalar: {request_detail.first_answer if request_detail.first_answer else 'Mavjud emas'}\n"
-            f"10. Kutayorgan maosh: {request_detail.salary}\n"
-            f"11. Ishlash muddati: {request_detail.second_answer if request_detail.second_answer else 'N/A'}\n"
-            f"12. Sudlanganmi: {'Ha' if request_detail.convince else 'Yo`q'}\n"
-            f"13. Haydovchilik guvohnomasi: {request_detail.driver_license}\n"
-            f"14. Mashinasi bormi: {'Yes' if request_detail.has_car else 'No'}\n"
-            f"15. Ingliz tili darajasi: {request_detail.english_level}\n"
-            f"16. Rus tili darajasi: {request_detail.russian_level}\n"
-            f"17. Boshqa tillar: {request_detail.other_language}\n"
-            f"18. Word dasturini bilish darajasi: {request_detail.third_answer}\n"
-            f"19. Excel dasturini bilish darajsi: {request_detail.fourth_answer}\n"
-            f"20. 1C dasturini bilish darajsi: {request_detail.c1_program_level}\n"
-            f"21. Boshqa dasturlar: {request_detail.fifth_answer}\n"
-            f"23. Biz haqimizda qayerdan ma'lumot oldi: {request_detail.sixth_answer if request_detail.sixth_answer else 'N/A'}\n"
-            f"22. Mebel sohasida ishlaganmi:{'Ha' if request_detail.worked_furniture else 'Yo`q'}\n"
-            f"24. Ariza yuborilgan sana: {request_detail.created_at.strftime('%Y-%m-%d %H:%M:%S')}")
+            f"4. Hudud: {request_detail.region}\n"
+            f"5. Millati: {request_detail.nationality}\n"
+            f"6. Ma'lumoti: {request_detail.education}\n"
+            f"7. Oilaviy holati: {'Turmush qurgan' if request_detail.marriage else 'Turmush qurmagan'}\n"
+            f"8. Avval ishlagan korxonalar: {request_detail.first_answer if request_detail.first_answer else 'Mavjud emas'}\n"
+            f"9. Kutayorgan maosh: {request_detail.salary}\n"
+            f"10. Ishlash muddati: {request_detail.second_answer if request_detail.second_answer else 'N/A'}\n"
+            f"11. Sudlanganmi: {'Ha' if request_detail.convince else 'Yo`q'}\n"
+            f"12. Haydovchilik guvohnomasi: {request_detail.driver_license}\n"
+            f"13. Mashinasi bormi: {'Yes' if request_detail.has_car else 'No'}\n"
+            f"14. Ingliz tili darajasi: {request_detail.english_level}\n"
+            f"15. Rus tili darajasi: {request_detail.russian_level}\n"
+            f"16 Boshqa tillar: {request_detail.other_language}\n"
+            f"17. Word dasturini bilish darajasi: {request_detail.third_answer}\n"
+            f"18. Excel dasturini bilish darajsi: {request_detail.fourth_answer}\n"
+            f"19. Boshqa dasturlar: {request_detail.fifth_answer}\n"
+            f"20. Biz haqimizda qayerdan ma'lumot oldi: {request_detail.sixth_answer if request_detail.sixth_answer else 'N/A'}\n"
+            f"21. Mebel sohasida ishlaganmi:{'Ha' if request_detail.worked_furniture else 'Yo`q'}\n"
+            f"22. Ariza yuborilgan sana: {request_detail.created_at.strftime('%Y-%m-%d %H:%M:%S')}")
 
         try:
             await call.message.delete()

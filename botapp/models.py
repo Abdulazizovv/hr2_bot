@@ -44,7 +44,7 @@ class UserRequest(models.Model):
     full_name = models.CharField(max_length=255) # ismi va familiyasi
     phone_number = models.CharField(max_length=255) #
     birth_year = models.CharField(max_length=255) # tug'ilgan yili
-    position = models.CharField(max_length=255) # lavozim
+    # position = models.CharField(max_length=255) # lavozim
     region = models.CharField(max_length=255) # viloyat
     nationality = models.CharField(max_length=255) # millati
     education = models.CharField(max_length=100) # ta'lim
@@ -60,7 +60,7 @@ class UserRequest(models.Model):
     other_language = models.CharField(max_length=255) # boshqa tillar
     third_answer = models.CharField(max_length=25) # word dasturida ishlay olish darajasi
     fourth_answer = models.CharField(max_length=25) # excel dasturida ishlay olish darajasi
-    c1_program_level = models.CharField(max_length=25) # C1 dasturida ishlay olish darajasi
+    # c1_program_level = models.CharField(max_length=25) # C1 dasturida ishlay olish darajasi
     
     worked_furniture = models.BooleanField(default=False) # mebel korxonalari bilan ishlaganligi
     fifth_answer = models.TextField() # boshqa dasturlarda ishlay olish darajasi
@@ -72,7 +72,7 @@ class UserRequest(models.Model):
     updated_at = models.DateTimeField(auto_now=True) # qachon yangilanganligi
 
     def __str__(self):
-        return f'{self.user.full_name} - {self.position}'
+        return f'{self.user.full_name}'
 
     class Meta:
         ordering = ['-created_at']

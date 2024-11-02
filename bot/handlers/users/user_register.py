@@ -69,30 +69,35 @@ async def get_is_worked(call: types.CallbackQuery, state: FSMContext):
         await state.update_data(worked_furniture="Ha")
     else:
         await state.update_data(worked_furniture="Yo'q")
-    positions = await sync_to_async(lambda: list(Position.objects.all()), thread_sensitive=True)()
-
-    if not positions:
-        await call.message.delete()
-        await call.message.answer(_("Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."), reply_markup=main_menu_btn)
-        await state.finish()
-        return
-
-    await call.message.edit_text(_("Iltimos, soha bo'yicha yo'nalishni tanlang:"), reply_markup=positions_btn(positions))
-    await RegisterState.position.set()
-
-
-
-@dp.callback_query_handler(state=RegisterState.position)
-async def get_position(call: types.CallbackQuery, state: FSMContext):
-    position_id = call.data.split(":")[-1]
-    position = await sync_to_async(lambda: Position.objects.filter(id=int(position_id)).first(), thread_sensitive=True)()
-    await state.update_data(position=position.name)
+    
     text = _("Anketa to'ldirishni boshlash✏️")
-    if position:
-        if position.description:
-            text = position.description
     await call.message.edit_text(text, reply_markup=start_request_btn)
     await RegisterState.start_request.set()
+    
+    # positions = await sync_to_async(lambda: list(Position.objects.all()), thread_sensitive=True)()
+
+    # if not positions:
+    #     await call.message.delete()
+    #     await call.message.answer(_("Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib ko'ring."), reply_markup=main_menu_btn)
+    #     await state.finish()
+    #     return
+
+    # await call.message.edit_text(_("Iltimos, soha bo'yicha yo'nalishni tanlang:"), reply_markup=positions_btn(positions))
+    # await RegisterState.position.set()
+
+
+
+# @dp.callback_query_handler(state=RegisterState.position)
+# async def get_position(call: types.CallbackQuery, state: FSMContext):
+#     position_id = call.data.split(":")[-1]
+#     position = await sync_to_async(lambda: Position.objects.filter(id=int(position_id)).first(), thread_sensitive=True)()
+#     await state.update_data(position=position.name)
+#     text = _("Anketa to'ldirishni boshlash✏️")
+#     if position:
+#         if position.description:
+#             text = position.description
+#     await call.message.edit_text(text, reply_markup=start_request_btn)
+#     await RegisterState.start_request.set()
 
 
 @dp.callback_query_handler(state=RegisterState.start_request)
@@ -232,16 +237,19 @@ async def get_third_answer(call: types.CallbackQuery, state: FSMContext):
 async def get_excel_level(call: types.CallbackQuery, state: FSMContext):
     excel_level = call.data.split(":")[-1]
     await state.update_data(fourth_answer=f"{excel_level} %")
-    await call.message.edit_text(_("1C dasturini bilish darajasi:\n(foizda(%) ko'rsating)"), reply_markup=degree_btn())
-    await RegisterState.c1_program_level.set()
-
-
-@dp.callback_query_handler(state=RegisterState.c1_program_level)
-async def get_c1_program_level(call: types.CallbackQuery, state: FSMContext):
-    c1_program_level = call.data.split(":")[-1]
-    await state.update_data(c1_program_level=f"{c1_program_level} %")
     await call.message.edit_text(_("Boshqa qanday dasturlar bilan ishlay olasiz?\nNomi va necha %"), reply_markup=skip_btn)
     await RegisterState.fifth_answer.set()
+
+    # await call.message.edit_text(_("1C dasturini bilish darajasi:\n(foizda(%) ko'rsating)"), reply_markup=degree_btn())
+    # await RegisterState.c1_program_level.set()
+
+
+# @dp.callback_query_handler(state=RegisterState.c1_program_level)
+# async def get_c1_program_level(call: types.CallbackQuery, state: FSMContext):
+#     c1_program_level = call.data.split(":")[-1]
+#     await state.update_data(c1_program_level=f"{c1_program_level} %")
+#     await call.message.edit_text(_("Boshqa qanday dasturlar bilan ishlay olasiz?\nNomi va necha %"), reply_markup=skip_btn)
+#     await RegisterState.fifth_answer.set()
 
 
 @dp.callback_query_handler(state=RegisterState.fifth_answer)
@@ -275,7 +283,6 @@ async def get_image(message: types.Message, state: FSMContext):
                            f"<b>Tug'ilgan yil:</b> {data.get('birth_year')}\n"
                            f"<b>Telefon raqam:</b> {data.get('phone_number')}\n"
                            f"<b>Mebel sohasida ishlaganligi:</b> {data.get('worked_furniture')}\n"
-                           f"<b>Lavozim:</b> {data.get('position')}\n"
                            f"<b>Hudud:</b> {data.get('region')}\n"
                            f"<b>Millat:</b> {data.get('nationality')}\n"
                            f"<b>Ma'lumoti:</b> {data.get('education')}\n"
@@ -291,7 +298,6 @@ async def get_image(message: types.Message, state: FSMContext):
                             f"<b>Boshqa tillar:</b> {data.get('other_language')}\n"
                             f"<b>Word dasturi:</b> {data.get('third_answer')}\n"
                             f"<b>Excel dasturi:</b> {data.get('fourth_answer')}\n"
-                            f"<b>1C dasturi:</b> {data.get('c1_program_level')}\n"
                             f"<b>Boshqa dasturlar:</b> {data.get('fifth_answer')}\n"
                             f"<b>Qayerdan ma'lumot oldingiz:</b> {data.get('sixth_answer')}\n"
                            ), 
@@ -320,7 +326,7 @@ async def submit_application(call: types.CallbackQuery, state: FSMContext):
         pdf = await create_pdf_with_tables(filename=file_name, data=data, image_stream=image_stream)
         caption_text = f"👤Ism sharif: {data.get('full_name')}" \
                         f"\n📞Telefon raqam: {data.get('phone_number')}" \
-                        f"\n#️⃣Soha: {data.get('position')}" \
+                        f"\n⚜️Mebel sohasida ishlaganmi: {data.get('worked_furniture')}" \
                         f"\n📍Hudud: {data.get('region')}"
         await call.message.edit_reply_markup()
         await call.message.answer("⏳")
@@ -331,7 +337,6 @@ async def submit_application(call: types.CallbackQuery, state: FSMContext):
             phone_number=data.get("phone_number"),
             is_worked=True if data.get("worked_furniture")=="Ha" else False,
             birth_year=data.get("birth_year"),
-            position=data.get("position"),
             region=data.get("region"),
             nationality=data.get("nationality"),
             education=data.get("education"),
@@ -347,7 +352,6 @@ async def submit_application(call: types.CallbackQuery, state: FSMContext):
             other_language=data.get("other_language"),
             third_answer=data.get("third_answer"),
             fourth_answer=data.get("fourth_answer"),
-            c1_program_level=data.get("c1_program_level"),
             fifth_answer=data.get("fifth_answer"),
             sixth_answer=data.get("sixth_answer"),
             image=image_file_id,

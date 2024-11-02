@@ -15,12 +15,12 @@ async def on_new_request_notify(dp: Dispatcher, request_id: int):
                 return None
             try:
                 await dp.bot.send_document(chat_id=admin, document=data['file_id'], caption=f"Yangi ariza qabul qilindi:\n"
-                                                f"Mebel sohasida {'ishlagan✅' if data['worked_furniture'] else 'ishlamagan❌'}\n"
+                                                f"⚜️Mebel sohasida {'ishlagan✅' if data['worked_furniture'] else 'ishlamagan❌'}\n"
                                                 f"👤 Ismi: {data['full_name']}\n"
                                                 f"📞 Telefon raqami: {data['phone_number']}\n"
                                                 f"📅 Tug'ilgan yili: {data['birth_year']}\n"
                                                 f"📍 Manzili: {data['region']}\n"
-                                                f"🇺🇿 Millati: {data['nationality']}")
+                                                f"🛂 Millati: {data['nationality']}")
             except Exception as err:
                 logging.exception(err)
 

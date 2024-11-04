@@ -75,7 +75,7 @@ async def create_pdf_with_tables(filename, data, image_stream=None):
 
     # Work Experience with adjusted column widths and wrapped text
     work_experience_data = [
-        ["Mebel sohasida ishlagansizmi", 'Ha' if data.get('worked_furniture') else "Yo'q"],
+        ["Mebel sohasida ishlagansizmi", data.get('worked_furniture')],
         ["Qaysi korxona yoki lavozimlarda ishlagansiz", data.get('first_answer')],
         ["Bizda qancha maoshga ishlamoqchisiz", data.get('salary')],
         ["Bizning korxonada qancha muddat ishlamoqchisiz", data.get('second_answer')],

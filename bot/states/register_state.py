@@ -8,6 +8,7 @@ class RegisterState(StatesGroup):
     birth_year = State()
     position = State()
     region = State()
+    fergana_region = State()
     nationality = State()
     education = State()
     experience = State()

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-02 19:32+0500\n"
+"POT-Creation-Date: 2024-12-27 00:34+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,19 +64,19 @@ msgstr ""
 msgid "Telefon raqamingizni yuboring"
 msgstr "Телефон рақамингизни юборинг"
 
-#: bot/handlers/users/user_register.py:61
+#: bot/handlers/users/user_register.py:63
 msgid "Mebel sohasida ishlaganmisiz?"
 msgstr "Мебел соҳасида ишлаганмисиз?"
 
-#: bot/handlers/users/user_register.py:73
+#: bot/handlers/users/user_register.py:75
 msgid "Anketa to'ldirishni boshlash✏️"
 msgstr "Анкета тўлдиришни бошлаш✏️"
 
-#: bot/handlers/users/user_register.py:106
+#: bot/handlers/users/user_register.py:108
 msgid "Qaysi viloyat yoki shahardansiz?"
 msgstr "Қайси вилоят ёки шаҳардансиз?"
 
-#: bot/handlers/users/user_register.py:109
+#: bot/handlers/users/user_register.py:111
 msgid ""
 "Ariza qoldirish bekor qilindi.\n"
 "Siz bosh sahifaga qaytdingiz."
@@ -84,29 +84,36 @@ msgstr ""
 "Ариза қолдириш бекор қилинди.\n"
 "Сиз бош саҳифага қайтдингиз."
 
-#: bot/handlers/users/user_register.py:118
+#: bot/handlers/users/user_register.py:121
+#, fuzzy
+#| msgid "Qaysi viloyat yoki shahardansiz?"
+msgid "Farg'ona viloyatining qaysi tuman yoki shahridansiz?"
+msgstr "Қайси вилоят ёки шаҳардансиз?"
+
+#: bot/handlers/users/user_register.py:126
+#: bot/handlers/users/user_register.py:135
 msgid "Millatingizni tanlang:"
 msgstr "Миллатингизни танланг:"
 
-#: bot/handlers/users/user_register.py:127
+#: bot/handlers/users/user_register.py:144
 msgid "Ma'lumotingiz:"
 msgstr "Маълумотингиз:"
 
-#: bot/handlers/users/user_register.py:137
+#: bot/handlers/users/user_register.py:154
 msgid "Oilaviy holatingiz:"
 msgstr "Оилавий ҳолатингиз:"
 
-#: bot/handlers/users/user_register.py:145
+#: bot/handlers/users/user_register.py:162
 msgid ""
 "Qaysi korxona yoki tashkilotlarda va qaysi lavozimlarda ishlagansiz?\n"
 "Masalan: OOO 'Uzavtosanoat' da, Direktor bo'lib ishlaganman\n"
 "<b><i>*Bu bo'limni to'ldirish majburiy</i></b>"
 msgstr ""
 "Қайси корхона ёки ташкилотларда ва қайси лавозимларда ишлагансиз?\n"
-"Масалан: ООО ъУзавтосаноатъ да, Директор бўлиб ишлаганман\n"
+"Масалан: ООО Узавтосаноат да, Директор бўлиб ишлаганман\n"
 "<b><i>*Бу бўлимни тўлдириш мажбурий</i></b>"
 
-#: bot/handlers/users/user_register.py:154
+#: bot/handlers/users/user_register.py:171
 msgid ""
 "Bizda qancha maoshga ishlamoqchisiz?\n"
 "Masalan: 2 000 000 so'm"
@@ -114,34 +121,35 @@ msgstr ""
 "Бизда қанча маошга ишламоқчисиз?\n"
 "Масалан: 2 000 000 сўм"
 
-#: bot/handlers/users/user_register.py:162
+#: bot/handlers/users/user_register.py:179
 msgid ""
 "Bizning korxonada qancha muddat ishlamoqchisiz?\n"
 "Masalan: 1 yil, 1 oy va h.k."
-msgstr "Бизнинг корхонада қанча муддат ишламоқчисиз?\n"
+msgstr ""
+"Бизнинг корхонада қанча муддат ишламоқчисиз?\n"
 "Масалан: 1 йил, 1 ой ва ҳ.к."
 
-#: bot/handlers/users/user_register.py:170
+#: bot/handlers/users/user_register.py:187
 msgid "Sudlanganmisiz?"
 msgstr "Судланганмисиз?"
 
-#: bot/handlers/users/user_register.py:178
+#: bot/handlers/users/user_register.py:195
 msgid "Haydovchilik guvohnomangiz bormi?"
 msgstr "Ҳайдовчилик гувоҳномангиз борми?"
 
-#: bot/handlers/users/user_register.py:186
+#: bot/handlers/users/user_register.py:203
 msgid "O'zingizni shaxsiy avtomobilingiz bormi?"
 msgstr "Ўзингизни шахсий автомобилингиз борми?"
 
-#: bot/handlers/users/user_register.py:194
+#: bot/handlers/users/user_register.py:211
 msgid "Rus tili bilish darajangizni tanlang:"
 msgstr "Рус тили билиш даражангизни танланг:"
 
-#: bot/handlers/users/user_register.py:202
+#: bot/handlers/users/user_register.py:219
 msgid "Ingliz tili bilish darajangizni tanlang:"
 msgstr "Инглиз тили билиш даражангизни танланг:"
 
-#: bot/handlers/users/user_register.py:210
+#: bot/handlers/users/user_register.py:227
 msgid ""
 "Boshqa tillarni bilasizmi?\n"
 "Qaysi til va necha % "
@@ -149,8 +157,8 @@ msgstr ""
 "Бошқа тилларни биласизми?\n"
 "Қайси тил ва неча % "
 
-#: bot/handlers/users/user_register.py:217
-#: bot/handlers/users/user_register.py:224
+#: bot/handlers/users/user_register.py:234
+#: bot/handlers/users/user_register.py:241
 msgid ""
 "Word dasturini bilish darajasi:\n"
 "(foizda(%) ko'rsating)"
@@ -158,7 +166,7 @@ msgstr ""
 "Wорд дастурини билиш даражаси:\n"
 "(фоизда(%) кўрсатинг)"
 
-#: bot/handlers/users/user_register.py:232
+#: bot/handlers/users/user_register.py:249
 #, fuzzy
 #| msgid ""
 #| "Excel dasturini bilish darajasi:\n"
@@ -170,7 +178,7 @@ msgstr ""
 "Эхcел дастурини билиш даражаси:\n"
 "(фоизда() кўрсатинг)"
 
-#: bot/handlers/users/user_register.py:240
+#: bot/handlers/users/user_register.py:257
 msgid ""
 "Boshqa qanday dasturlar bilan ishlay olasiz?\n"
 "Nomi va necha %"
@@ -178,16 +186,16 @@ msgstr ""
 "Бошқа қандай дастурлар билан ишлай оласиз?\n"
 "Номи ва неча %"
 
-#: bot/handlers/users/user_register.py:258
-#: bot/handlers/users/user_register.py:265
+#: bot/handlers/users/user_register.py:275
+#: bot/handlers/users/user_register.py:282
 msgid "Korxonamiz haqida qayerdan ma'lumot oldingiz?"
 msgstr "Корхонамиз ҳақида қаердан маълумот олдингиз?"
 
-#: bot/handlers/users/user_register.py:273
+#: bot/handlers/users/user_register.py:290
 msgid "Iltimos, rasmingizni yuboring📷:"
 msgstr "Илтимос, расмингизни юборинг:"
 
-#: bot/handlers/users/user_register.py:281
+#: bot/handlers/users/user_register.py:298
 msgid ""
 "<b>Ma'lumotlaringizni to'gri ekanligini tekshiring va tasdiqlang</b>\n"
 "\n"
@@ -195,7 +203,7 @@ msgstr ""
 "<b>Маълумотларингизни тўгри эканлигини текширинг ва тасдиқланг</b>\n"
 "\n"
 
-#: bot/handlers/users/user_register.py:368
+#: bot/handlers/users/user_register.py:383
 msgid "Ariza yuborish bekor qilindi❌"
 msgstr "Ариза юбориш бекор қилинди❌"
 
@@ -211,17 +219,13 @@ msgstr "📑 Корхона ҳақида тўлиқ маълумот"
 msgid "🔙 Orqaga"
 msgstr "🔙 Орқага"
 
-#: bot/keyboards/default/send_phone_number_kb.py:9
+#: bot/keyboards/default/send_phone_number_kb.py:10
 msgid "📞Telefon raqamni yuborish"
 msgstr "📞Телефон рақамни юбориш"
 
 #: bot/keyboards/inline/admin_menu_kb.py:8
 msgid "Arizalar🗂"
 msgstr "Аризалар🗂"
-
-#: bot/keyboards/inline/admin_menu_kb.py:11
-msgid "Vakansiyalar📋"
-msgstr "Вакансиялар📋"
 
 #: bot/keyboards/inline/admin_menu_kb.py:14
 msgid "Adminlar👨🏻‍💻"
@@ -362,6 +366,86 @@ msgstr "Тошкент вилояти"
 msgid "Xorazm"
 msgstr "Хоразм"
 
+#: bot/keyboards/inline/regions_kb.py:7
+#, fuzzy
+#| msgid "Farg'ona"
+msgid "Farg'ona shahri"
+msgstr "Фарғона"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Qo'qon shahri"
+msgstr "Қўқон шаҳри"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Quvasoy shahri"
+msgstr "Қувасой шаҳри"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Marg'ilon shahri"
+msgstr "Марғилон шаҳри"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Oltiariq tumani"
+msgstr "Олтиариқ тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Beshariq tumani"
+msgstr "Бешариқ тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Bag'dod tumani"
+msgstr "Бағдод тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Buvayda tumani"
+msgstr "Бувайда тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Dang'ara tumani"
+msgstr "Данғара тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+#, fuzzy
+#| msgid "Farg'ona"
+msgid "Farg'ona tumani"
+msgstr "Фарғона"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Furqat tumani"
+msgstr "Фурқат тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Quva tumani"
+msgstr "Қува тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Rishton tumani"
+msgstr "Риштон тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "So'x tumani"
+msgstr "Сўх тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Toshloq tumani"
+msgstr "Тошлоқ тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Uchko'prik tumani"
+msgstr "Учкўприк тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Yozyovon tumani"
+msgstr "Ёзёвон тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "Qo'shtepa tumani"
+msgstr "Қўштепа тумани"
+
+#: bot/keyboards/inline/regions_kb.py:7
+msgid "O'zbekiston tumani"
+msgstr "Ўзбекистон тумани"
+
 #: bot/keyboards/inline/skip_kb.py:8
 msgid "Keyingi savol"
 msgstr "Кейинги савол"
@@ -394,6 +478,9 @@ msgstr "Фаcебоок орқали"
 #: bot/keyboards/inline/where_hear_kb.py:13
 msgid "Tanishim"
 msgstr "Танишим"
+
+#~ msgid "Vakansiyalar📋"
+#~ msgstr "Вакансиялар📋"
 
 #~ msgid ""
 #~ "Hozircha hech qanday yo'nalish mavjud emas. Iltimos, keyinroq urinib "

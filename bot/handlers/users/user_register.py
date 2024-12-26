@@ -6,7 +6,7 @@ from django.utils.translation import gettext as _
 from bot.states import RegisterState
 from aiogram.dispatcher import FSMContext
 from bot.keyboards.default import phone_number_btn, back_kb, main_menu_btn, cancel_btn, language_btn
-from bot.keyboards.inline import positions_btn, start_request_btn, regions_btn, regions
+from bot.keyboards.inline import positions_btn, start_request_btn, regions_btn, regions, fergana_regions, fergana_regions_btn
 from bot.keyboards.inline import nationalities_btn, nationalities, submit_btn
 from asgiref.sync import sync_to_async
 from bot.utils.db_api import get_all_positions, get_position, add_user_request
@@ -56,6 +56,8 @@ async def get_birth_year(message: types.Message, state: FSMContext):
 @dp.message_handler(state=RegisterState.phone_number, content_types=types.ContentType.CONTACT)
 async def get_phone_number(message: types.Message, state: FSMContext):
     phone_number = message.contact.phone_number
+    if not phone_number.startswith("+"):
+        phone_number = "+" + phone_number
     await state.update_data(phone_number=phone_number)
 
     await message.answer(_("Mebel sohasida ishlaganmisiz?"), reply_markup=is_worked_kb())
@@ -113,7 +115,22 @@ async def start_request(call: types.CallbackQuery, state: FSMContext):
 @dp.callback_query_handler(state=RegisterState.region)
 async def get_region(call: types.CallbackQuery, state: FSMContext):
     region_index = call.data.split(":")[-1]
-    region = regions[int(region_index)]
+    print(region_index.strip(), regions[int(region_index)])
+    if int(region_index) == 3:
+        await state.update_data(region="Farg'ona viloyati")
+        await call.message.edit_text(_("Farg'ona viloyatining qaysi tuman yoki shahridansiz?"), reply_markup=fergana_regions_btn())
+        await RegisterState.fergana_region.set()
+    else:
+        region = regions[int(region_index)]
+        await state.update_data(region=region)
+        await call.message.edit_text(_("Millatingizni tanlang:"), reply_markup=nationalities_btn())
+        await RegisterState.nationality.set()
+
+
+@dp.callback_query_handler(state=RegisterState.fergana_region)
+async def get_fergana_region(call: types.CallbackQuery, state: FSMContext):
+    region_index = call.data.split(":")[-1]
+    region = fergana_regions[int(region_index)]
     await state.update_data(region=region)
     await call.message.edit_text(_("Millatingizni tanlang:"), reply_markup=nationalities_btn())
     await RegisterState.nationality.set()

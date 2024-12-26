@@ -108,14 +108,14 @@ async def start_request(call: types.CallbackQuery, state: FSMContext):
         await call.message.edit_text(_("Qaysi viloyat yoki shahardansiz?"), reply_markup=regions_btn())
         await RegisterState.region.set()
     else:
-        await call.message.edit_text(_("Ariza qoldirish bekor qilindi.\nSiz bosh sahifaga qaytdingiz."))
+        await call.message.delete()
+        await call.message.answer(_("Ariza bekor qilindi"), reply_markup=main_menu_btn)
         await state.finish()
 
     
 @dp.callback_query_handler(state=RegisterState.region)
 async def get_region(call: types.CallbackQuery, state: FSMContext):
     region_index = call.data.split(":")[-1]
-    print(region_index.strip(), regions[int(region_index)])
     if int(region_index) == 3:
         await state.update_data(region="Farg'ona viloyati")
         await call.message.edit_text(_("Farg'ona viloyatining qaysi tuman yoki shahridansiz?"), reply_markup=fergana_regions_btn())
@@ -379,6 +379,6 @@ async def submit_application(call: types.CallbackQuery, state: FSMContext):
         await call.message.answer("Arizaningiz muvaffaqiyatli yuborildi✅")
         await on_new_request_notify(dp, await sync_to_async(lambda: request.id)())
     else:
-        await call.message.edit_reply_markup()
-        await call.message.edit_text(_("Ariza yuborish bekor qilindi❌"))
+        await call.message.delete()
+        await call.message.answer(_("Arizangiz bekor qilindi"), reply_markup=main_menu_btn)
     await state.finish()

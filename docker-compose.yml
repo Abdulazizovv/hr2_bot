@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  hr2_web:
+    build: .
+    container_name: hr2_web
+    restart: always
+    depends_on:
+      - hr2_db
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+
+  hr2_bot:
+    build: .
+    container_name: hr2_bot
+    restart: always
+    depends_on:
+      - hr2_db
+    env_file:
+      - .env
+    command: ["python", "manage.py", "app"]
+
+  hr2_db:
+    image: postgres:16-alpine
+    container_name: hr2_postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5566:5432"
+
+volumes:
+  postgres_data:
